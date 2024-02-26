@@ -1,0 +1,19 @@
+extend type Query {
+  employment(id:ID!): Employment
+  employments: [Employment]!
+}
+
+extend type Mutation {
+  createEmployment(input: EmploymentInput!): Employment!
+}
+
+type Employment {
+  id: ID!
+  member: Member!
+  organization: Organization!
+}
+
+input EmploymentInput {
+  memberId: String!
+  organizationId: String!
+}

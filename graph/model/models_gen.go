@@ -2,25 +2,39 @@
 
 package model
 
+type Employment struct {
+	ID           string        `json:"id"`
+	Member       *Member       `json:"member"`
+	Organization *Organization `json:"organization"`
+}
+
+type EmploymentInput struct {
+	MemberID       string `json:"memberId"`
+	OrganizationID string `json:"organizationId"`
+}
+
+type Member struct {
+	ID        string `json:"id"`
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
+}
+
+type MemberInput struct {
+	FirstName string `json:"firstName"`
+	LastName  string `json:"LastName"`
+}
+
 type Mutation struct {
 }
 
-type NewTodo struct {
-	Text   string `json:"text"`
-	UserID string `json:"userId"`
+type Organization struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
+}
+
+type OrganizationInput struct {
+	Name string `json:"name"`
 }
 
 type Query struct {
-}
-
-type Todo struct {
-	ID   string `json:"id"`
-	Text string `json:"text"`
-	Done bool   `json:"done"`
-	User *User  `json:"user"`
-}
-
-type User struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
 }

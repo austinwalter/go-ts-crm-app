@@ -1,0 +1,17 @@
+extend type Query {
+  organization(id:ID!): Organization
+  organizations: [Organization]!
+}
+
+extend type Mutation {
+  createOrganization(input: OrganizationInput!): Organization!
+}
+
+type Organization {
+  id: ID!
+  name: String!
+}
+
+input OrganizationInput {
+  name: String!
+}
